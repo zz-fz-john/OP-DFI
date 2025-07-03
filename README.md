@@ -45,28 +45,28 @@ This repo provides a generalized framework for opportunistic protection, that is
   - The running script assumes the  VM has the following file directory.
 ```
 
-git clone https://github.com/WUSTL-CSPL/OP-DFI ~/opdfi
+git clone https://github.com/WUSTL-CSPL/OP-DFI 
 
-mkdir ~/toolchain && cd ~/toolchain
+mkdir toolchain && cd toolchain
 
 mkdir klee && mkdir SVF && mkdir llvm-project
 ```
 
 
--  Apply patches located in  ``~/opdfi/KLEE_patch``, ``~/opdfi/SVF_patch``, ``~/opdfi/LLVM_patch`` to KLEE (commit `fc83f06b17221bf5ef20e30d9da1ccff927beb17`), SVF (commit `06920202d216e003efcac1469fc78b12904cd2c6`) and LLVM (commit `75e33f71c2dae584b13a7d1186ae0a038ba98838`) respectively. Finally. compile klee, SVF and LLVM following guidance of the official repository.
+-  Apply patches located in  ``OP-DFI/KLEE_patch``, ``OP-DFI/SVF_patch``, ``OP-DFI/LLVM_patch`` to KLEE (commit `fc83f06b17221bf5ef20e30d9da1ccff927beb17`), SVF (commit `06920202d216e003efcac1469fc78b12904cd2c6`) and LLVM (commit `75e33f71c2dae584b13a7d1186ae0a038ba98838`) respectively. Finally. compile klee, SVF and LLVM following guidance of the official repository.
 
 
 #### Environment Setup
 - After installation, setup the corresponding environmental variables by copying following command into ``~/.bashrc``.
 ```
-export LLVM_DIR=~/toolchain/llvm-project/\
+export LLVM_DIR=./toolchain/llvm-project/\
 build
-export KLEE_DIR=~/toolchain/klee/build
-export SVF_DIR=~/toolchain/SVF
+export KLEE_DIR=./toolchain/klee/build
+export SVF_DIR=./toolchain/SVF
 export KLEE_INC=$KLEE_DIR/../include
 export PATH="$LLVM_DIR/bin:\
 $KLEE_DIR/bin:$PATH"
-export opdfi=/home/opdfi/opdfi
+export opdfi=/home/zrz0517/study/chain_attestation/OP-DFI
 ```
 
 #### Basic Test
@@ -100,7 +100,7 @@ The following command will compile a demo on a sample program located in ``~/opd
 
 ```
 
-cd ~/opdfi/test 
+cd /home/zrz0517/study/chain_attestation/OP-DFI/src_test 
 source ../compile.sh
 
 ```
@@ -113,7 +113,7 @@ Based on the security policy, the program code is first duplicated into multiple
   #### Execution
 
 ```
- cd ~/opdfi/test 
+cd /home/zrz0517/study/chain_attestation/OP-DFI/src_test 
 qemu-aarch64 -L /usr/aarch64-linux-gnu/ ./compile_results/execute_me
 ```
 
