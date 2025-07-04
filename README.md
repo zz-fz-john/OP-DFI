@@ -59,13 +59,11 @@ mkdir klee && mkdir SVF && mkdir llvm-project
 #### Environment Setup
 - After installation, setup the corresponding environmental variables by copying following command into ``~/.bashrc``.
 ```
-export LLVM_DIR=./toolchain/llvm-project/\
-build
-export KLEE_DIR=./toolchain/klee/build
-export SVF_DIR=./toolchain/SVF
+export LLVM_DIR=/home/zrz0517/study/chain_attestation/OP-DFI/toolchain/llvm-project/build
+export KLEE_DIR=/home/zrz0517/study/chain_attestation/OP-DFI/toolchain/klee/build
+export SVF_DIR=/home/zrz0517/study/chain_attestation/OP-DFI/toolchain/SVF
 export KLEE_INC=$KLEE_DIR/../include
-export PATH="$LLVM_DIR/bin:\
-$KLEE_DIR/bin:$PATH"
+export PATH="$LLVM_DIR/bin:$KLEE_DIR/bin:$PATH"
 export opdfi=/home/zrz0517/study/chain_attestation/OP-DFI
 ```
 

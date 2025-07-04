@@ -21,6 +21,7 @@ cd stp
 git submodule init && git submodule update
 ./scripts/deps/setup-gtest.sh
 ./scripts/deps/setup-outputcheck.sh
+#use gcc-10
 ./scripts/deps/setup-cms.sh
 ./scripts/deps/setup-minisat.sh
 mkdir build
@@ -46,7 +47,7 @@ export STP_DIR=/home/zrz0517/study/chain_attestation/OP-DFI/toolchain/stp/build
 export LD_LIBRARY_PATH="$STP_DIR/lib:$LD_LIBRARY_PATH"
 
 
-#build libc++ ，use gcc-7 and do :pip3 install wllvm
+#build libc++ ， do :pip3 install wllvm
 cd toolchain
 LLVM_VERSION=13 BASE=/home/zrz0517/study/chain_attestation/OP-DFI/toolchain/LIBCXX_DIR ENABLE_OPTIMIZED=1 DISABLE_ASSERTIONS=1 ENABLE_DEBUG=0 REQUIRES_RTTI=1 klee/scripts/build/build.sh libcxx
 
@@ -60,9 +61,8 @@ LLVM_VERSION=13 BASE=/home/zrz0517/study/chain_attestation/OP-DFI/toolchain/LIBC
   # endif()
 #sudo apt install libsqlite3-dev
 #pip3 install lit
-cd toolchain/klee
-mkdir build
-cd build
+cd klee
+mkdir build && cd build
 cmake -DENABLE_SOLVER_STP=ON -DENABLE_POSIX_RUNTIME=ON -DKLEE_UCLIBC_PATH=/home/zrz0517/study/chain_attestation/OP-DFI/toolchain/klee-uclibc \
  -DENABLE_UNIT_TESTS=OFF  -DENABLE_KLEE_LIBCXX=ON \
   -DKLEE_LIBCXX_DIR=/home/zrz0517/study/chain_attestation/OP-DFI/toolchain/LIBCXX_DIR/libc++-install-130 \
@@ -71,3 +71,7 @@ cmake -DENABLE_SOLVER_STP=ON -DENABLE_POSIX_RUNTIME=ON -DKLEE_UCLIBC_PATH=/home/
   .. 
 
 make -j2
+#test
+export LD_LIBRARY_PATH=~/study/chain_attestation/OP-DFI/toolchain/stp/deps/cadical/build:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=~/study/chain_attestation/OP-DFI/toolchain/stp/deps/cadiback:$LD_LIBRARY_PATH
+klee --version
