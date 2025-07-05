@@ -510,7 +510,7 @@ index 000000000000..44a0755bb2f4
 +     
 +              {
 +            
-+                int ArraySize = num_code_version; // For example, an array of size 10
++                int ArraySize = num_code_version+1; // For example, an array of size 10
 +
 +                // Create the array type
 +                ArrayType *IntArrayType = ArrayType::get(FuncPtr->getType(), ArraySize);
@@ -520,7 +520,7 @@ index 000000000000..44a0755bb2f4
 +                StringRef baseFuncName = getBaseFuncName(Callee->getName());
 +                // errs() << "baseFuncName: " << baseFuncName <<" , original name: "<<Callee->getName()<< "\n";
 +                InitValues.push_back(llvm::cast<llvm::Constant>(FuncPtr));
-+                for (int i = 0; i < ArraySize; ++i) {
++                for (int i = 0; i < num_code_version; ++i) {
 +                  // Initialize each element with i
 +                    std::string version_name_tmp= baseFuncName.str()+"_"+std::to_string(i+1)+"_version_opdfi";
 +                  if(M.getFunction(version_name_tmp)!=nullptr){

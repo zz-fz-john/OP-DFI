@@ -1,4 +1,8 @@
-cp $opdfi/src_test/* $opdfi/test/
+if [ -d "./test" ]; then
+  rm -rf "./test"
+fi
+mkdir ./test    
+cp ./src_test/* ./test/
 # source ../src_test/run.sh
-source $opdfi/test/start_test.sh
+source ./test/start_test.sh
 

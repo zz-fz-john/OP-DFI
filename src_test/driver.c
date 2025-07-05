@@ -55,7 +55,7 @@ __attribute__((noinline)) void opdfi_entry()
 }
 
 int read_test_inputs(int input_bag[TEST_SIZE][2]){
-  FILE *file = fopen("/home/opdfi/opdfi/test/test_inputs.txt", "r");
+  FILE *file = fopen("/home/zrz0517/study/chain_attestation/OP-DFI/test/test_inputs.txt", "r");
   if (file == NULL) {
     printf("Failed to open the file.\n");
     return 1;

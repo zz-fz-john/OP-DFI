@@ -27,7 +27,7 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         filename = sys.argv[1]
     else:
-        filename = '/home/opdfi/opdfi/src_test/test_inputs.txt'
+        filename = '/home/zrz0517/study/chain_attestation/OP-DFI/src_test/test_inputs.txt'
 
     write_to_test_file(filename)
     print(f'Input data saved to {filename}')

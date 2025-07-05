@@ -54,7 +54,7 @@ mkdir klee && mkdir SVF && mkdir llvm-project
 
 
 -  Apply patches located in  ``OP-DFI/KLEE_patch``, ``OP-DFI/SVF_patch``, ``OP-DFI/LLVM_patch`` to KLEE (commit `fc83f06b17221bf5ef20e30d9da1ccff927beb17`), SVF (commit `06920202d216e003efcac1469fc78b12904cd2c6`) and LLVM (commit `75e33f71c2dae584b13a7d1186ae0a038ba98838`) respectively. Finally. compile klee, SVF and LLVM following guidance of the official repository.
-
+first build llvm ,then build klee and svf
 
 #### Environment Setup
 - After installation, setup the corresponding environmental variables by copying following command into ``~/.bashrc``.

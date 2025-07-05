@@ -105,7 +105,7 @@ def process_constraints(arg1, arg2, arg3, arg4):
             file.write("\n".join(current_to_write))
             incremental_inputs_file[ii].append(arg2+"/"+constraint+".smt2_single")
             
-        with open("/home/opdfi/opdfi/test/compile_results/slack_constraints"+"/"+constraint+".single_constraint", "w") as file:
+        with open("/home/zrz0517/study/chain_attestation/OP-DFI/test/compile_results/slack_constraints"+"/"+constraint+".single_constraint", "w") as file:
             file.write("\n".join(current_to_write))
                    
     for k, data in incremental_inputs_file.items():
@@ -209,25 +209,24 @@ def prepare_formula(arg1, arg2, arg3, arg4,arg5):
         shutil.copy(arg1+"/"+file_name_without_ext+".pathlen", arg2+"/"+file_name_without_ext+".pathlen")
         shutil.copy(arg1+"/"+file_name_without_ext+".ktest", arg2+"/"+file_name_without_ext+".ktest")
         shutil.copy(arg1+"/"+file_name_without_ext+".smt2_map", arg2+"/"+file_name_without_ext+".smt2_map")
-        
-        
     tosave="\n".join(order_list)
     # print(tosave)
+    print("run prepare_formula.py")
     with open(arg2+"/order_list", "w") as file:
         file.write(tosave)
     # def calculate_protection_rate(output_path):
-    
     # for 
     # for p in or
     # with open(arg2+"/path_to_code_versions", "w") as file:
-    # print(path_to_length)
+    #print(path_to_length)
     wcet=max(path_to_length,key=lambda x:x[1])
     # min_et=min(path_to_length,key=lambda x:x[1])
     min_et=min(all_path_to_length,key=lambda x:x[1])
-    # print(wcet,min_et)
+    #print(wcet,min_et)
     code_version_coverage=[]
     dfi_scale=4.8
     # slack_scale=0.6
+    print("run prepare_formula.py")
     for i in range(num_of_version):
         
         r=wcet[1]/path_to_length[int(len(path_to_length)/(num_of_version))*i][1]
@@ -260,10 +259,11 @@ def prepare_formula(arg1, arg2, arg3, arg4,arg5):
         # code_version_coverage.append(0)
     # path_to_coverage
     # print(wcet,code_version_coverage)
+    print("/code_version_id_coverage"+'\n')
     with open(arg2+"/code_version_id_coverage", "w") as file:
         for cv in code_version_coverage:
             file.write(str(cv[0])+" "+str(int(cv[1]*1000))+"\n")
-    with open("/home/opdfi/opdfi/test/compile_results/version_info", "w") as file:
+    with open("/home/zrz0517/study/chain_attestation/OP-DFI/test/compile_results/version_info", "w") as file:
         file.write("VersionID"+" "+"Coverage"+"\n")
         for cv in code_version_coverage:
             file.write(str(cv[0])+" "+str(int(cv[1]*1000)/1000)+"\n")
@@ -300,7 +300,7 @@ def prepare_formula(arg1, arg2, arg3, arg4,arg5):
         file.write(tosave_path_order_list_scaled)
     process_constraints(arg1, arg2, arg3, arg4)
     
-    with open("/home/opdfi/opdfi/test/compile_results"+"/slack_estimate_policy", "w") as file:
+    with open("/home/zrz0517/study/chain_attestation/OP-DFI/test/compile_results"+"/slack_estimate_policy", "w") as file:
         file.write("slack"+" "+"{ ith-const:eval_result }"+"\n")
         for i,pl in enumerate(path_order_list_scaled_num[:-1]):
             file.write(str(pl[1])+"% "+slack_estimate_policy[i]+"\n")
@@ -317,6 +317,7 @@ if __name__ == "__main__":
     arg3 = sys.argv[3] # Third argument is the path number limit
     arg4 = sys.argv[4] # Fourth argument is the constraints number limit
     arg5 = sys.argv[5] # Fifth argument is the number of code_versions
-    # print(arg3,arg5)
+    print(arg1,arg2)
     number_of_constraints=int(arg4)
+    print("Number of constraints:", number_of_constraints)
     prepare_formula(arg1, arg2, arg3, arg4,arg5)

@@ -68,6 +68,7 @@ cmake -DENABLE_SOLVER_STP=ON -DENABLE_POSIX_RUNTIME=ON -DKLEE_UCLIBC_PATH=/home/
   -DKLEE_LIBCXX_DIR=/home/zrz0517/study/chain_attestation/OP-DFI/toolchain/LIBCXX_DIR/libc++-install-130 \
  -DKLEE_LIBCXX_INCLUDE_DIR=/home/zrz0517/study/chain_attestation/OP-DFI/toolchain/LIBCXX_DIR/libc++-install-130/include/c++/v1 \
  -DENABLE_KLEE_EH_CXX=ON -DKLEE_LIBCXXABI_SRC_DIR=/home/zrz0517/study/chain_attestation/OP-DFI/toolchain/LIBCXX_DIR/llvm-130/libcxxabi \
+ -DLLVM_DIR=/home/zrz0517/study/chain_attestation/OP-DFI/toolchain/llvm-project/build \
   .. 
 
 make -j2
