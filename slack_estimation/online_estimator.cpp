@@ -205,7 +205,7 @@ void slack_estimate(int *inputs, int _num)
         {
             // printf("to_eval: %s\n", to_eval[i].c_str());
             char command[500];
-            sprintf(command, "python3 ~/opdfi/slack_estimation/process_formula.py %s /tmp/output2 %d ", to_eval[i].c_str(), num);
+            sprintf(command, "python3 /home/zrz0517/study/chain_attestation/OP-DFI/slack_estimation/process_formula.py %s /tmp/output2 %d ", to_eval[i].c_str(), num);
 
             for (int j = 0; j < num; j++)
             {
@@ -358,7 +358,7 @@ void v0_slack_estimate(int *inputs, int num)
     {
         char command[500];
 
-        sprintf(command, "python3 ~/opdfi/slack_estimation/process_formula.py /tmp/processed_formula/%s.smt2 /tmp/output2 %d ", path_formulas[i].c_str(), num);
+        sprintf(command, "python3 /home/zrz0517/study/chain_attestation/OP-DFI/slack_estimation/process_formula.py /tmp/processed_formula/%s.smt2 /tmp/output2 %d ", path_formulas[i].c_str(), num);
 
         for (int j = 0; j < num; j++)
         {

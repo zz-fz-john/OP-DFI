@@ -4,8 +4,8 @@
 is_klee=1
 
 ###add klee/include to C_INCLUDE_PATH and CPLUS_INCLUDE_PATH
-TARGET_TRIPLE=aarch64-linux-gnu
-#TARGET_TRIPLE=x86_64-linux-gnu
+#TARGET_TRIPLE=aarch64-linux-gnu
+TARGET_TRIPLE=x86_64-linux-gnu
 #TARGET_TRIPLE=arm-linux-gnueabihf
 current_path=$(pwd)
 TEST_DIR=./test
