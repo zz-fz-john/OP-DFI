@@ -15,7 +15,7 @@ void invoke_by_external(int now, int len);
     // klee_make_symbolic(&num_values, sizeof(num_values), "s3");
     // klee_make_symbolic(&max_channels, sizeof(max_channels), "s4");
 
-     klee_assume((now<20) & (len<100) );
-     klee_assume((now>=0) & (len>=0) );
-     invoke_by_external(now,len);
+    klee_assume((now<20) & (len<100) );
+    klee_assume((now>=0) & (len>=0) );
+    invoke_by_external(now,len);
  }

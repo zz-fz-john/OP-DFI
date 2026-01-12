@@ -1,0 +1,17 @@
+array s0[4] : w32 -> w8 = symbolic
+array s1[4] : w32 -> w8 = symbolic
+(query [(Eq false
+             (Eq 0
+                 (And w32 (ZExt w32 (Slt N0:(ReadLSB w32 0 s0)
+                                         20))
+                          (ZExt w32 (Slt N1:(ReadLSB w32 0 s1)
+                                         100)))))
+         (Eq false
+             (Eq 0
+                 (And w32 (ZExt w32 (Sle 0 N0))
+                          (ZExt w32 (Sle 0 N1)))))
+         (Slt 0 N2:(Add w32 N1 N0))
+         (Eq false
+             (Ult (SExt w64 N2) 30))
+         (Eq false (Slt 96 N2))]
+        false)

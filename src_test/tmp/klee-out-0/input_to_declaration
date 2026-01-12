@@ -1,0 +1,4 @@
+s0
+(declare-fun s0 () (Array (_ BitVec 32) (_ BitVec 8) ) )
+s1
+(declare-fun s1 () (Array (_ BitVec 32) (_ BitVec 8) ) )

@@ -1,0 +1,23 @@
+/home/zrz0517/study/chain_attestation/OP-DFI/toolchain/klee/build/bin/klee ./tmp/symbolic_execute.bc --debug-dump-stp-queries --log-partial-queries-early --write-paths --write-kqueries --write-smt2s --write-sym-paths --write-test-info
+PID: 4038796
+Using monotonic steady clock with 1/1000000000s resolution
+Started: 2025-09-16 17:50:21
+BEGIN searcher description
+<InterleavedSearcher> containing 2 searchers:
+RandomPathSearcher
+WeightedRandomSearcher::CoveringNew
+</InterleavedSearcher>
+END searcher description
+Finished: 2025-09-16 17:50:26
+Elapsed: 00:00:05
+KLEE: done: explored paths = 9
+KLEE: done: avg. constructs per query = 252
+KLEE: done: total queries = 97
+KLEE: done: valid queries = 87
+KLEE: done: invalid queries = 10
+KLEE: done: query cex = 97
+
+KLEE: done: total instructions = 90155
+KLEE: done: completed paths = 9
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 9
