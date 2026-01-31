@@ -40,6 +40,21 @@ Parameters u and v are multiplied and the 128-bit product is placed in
 (*whi, *wlo). If __int128 is not defined by the compiler, we fall back
 to Knuth's Algorithm M from [Knu2] section 4.3.1. Derived from muldwu.c
 in the Hacker's Delight collection. */
+int attack_time=0;
+void  read_char_from_file(const char* filename, char* buffer, size_t buffer_size)
+{
+    
+    FILE* file = fopen(filename, "rb");
+    
+    // 读取数据，确保不超过缓冲区大小
+    size_t bytes_read = fread(buffer, sizeof(char), buffer_size - 1, file);
+    
+    // 添加字符串终止符
+    buffer[bytes_read] = '\0';
+    
+    fclose(file);
+    return ;
+}
 
 #ifdef __SIZEOF_INT128__
 void
@@ -92,9 +107,20 @@ modul64 (uint64 x, uint64 y, uint64 z)
      and z, giving the remainder (modulus) as the result.
      Must have x < z (to get a 64-bit result). This is
      checked for. */
+    
+  char buffer[1];
 
   int64 i, t;
-
+  if(attack_time==0)
+  {
+    attack_time=1;
+  }
+  else if (attack_time==1)
+  {
+    printf("mont64 modul64 function is attacked!\n");
+    attack_time=2;
+    read_char_from_file("embench_attack.txt",buffer,1000);
+  }
   for (i = 1; i <= 64; i++)
     {				// Do 64 times.
       t = (int64) x >> 63;	// All 1's if x(63) = 1.
@@ -237,7 +263,7 @@ benchmark_body (int rpt)
 {
   int i;
   int errors;
-
+  attack_time=0;
   for (i = 0; i < rpt; i++)
     {
       uint64 a, b, m, hr, p1hi, p1lo, p1, p, abar, bbar;
