@@ -1,0 +1,101 @@
+op_move_arm,%entry,4 { }
+op_move_arm,%entry,8 { }
+op_move_arm,%entry,12 { op_move_arm,%entry,4 }
+op_move_arm,%entry,15 { op_move_arm,%entry,8 }
+op_move_arm,%cond.true,2 { op_move_arm,%entry,8 }
+get_op_func,%entry,3 { }
+main_looper,%if.then2,3 { read_command,%while.end39,4 read_command,%if.then20,4 read_command,%if.end57,13 }
+read_command,%if.end57,13 { }
+read_command,%if.then20,4 { }
+read_command,%while.end39,4 { }
+get_op_func,%entry,7 { get_op_func,%entry,3 }
+status_OK,%entry,3 { }
+status_OK,%entry,7 { status_OK,%entry,3 }
+read_char_from_file,%entry,7 { }
+read_char_from_file,%entry,11 { }
+read_char_from_file,%entry,15 { }
+read_char_from_file,%entry,20 { read_char_from_file,%entry,7 }
+read_char_from_file,%entry,25 { }
+read_char_from_file,%entry,29 { read_char_from_file,%entry,11 }
+read_char_from_file,%entry,32 { read_char_from_file,%entry,15 }
+read_char_from_file,%entry,36 { read_char_from_file,%entry,25 }
+read_char_from_file,%entry,40 { }
+read_char_from_file,%entry,43 { read_char_from_file,%entry,40 }
+read_char_from_file,%entry,46 { read_char_from_file,%entry,7 }
+read_char_from_file,%entry,51 { read_char_from_file,%entry,11 }
+read_char_from_file,%entry,55 { }
+read_char_from_file,%entry,58 { read_char_from_file,%entry,25 }
+read_command,%entry,7 { }
+read_command,%entry,15 { }
+read_command,%if.then,2 { }
+read_command,%if.end,5 { }
+read_command,%if.end,8 { read_command,%if.end,5 }
+read_command,%land.lhs.true,2 { read_command,%if.end,5 }
+read_command,%land.lhs.true,7 { }
+read_command,%if.then6,2 { read_command,%if.end,5 }
+read_command,%if.then6,6 { }
+read_command,%if.then6,10 { }
+read_command,%if.end8,4 { }
+read_command,%while.cond,2 { read_command,%if.end8,4 read_command,%while.body,6 }
+read_command,%while.body,6 { }
+read_command,%while.cond,5 { read_command,%if.then6,10 }
+read_command,%land.rhs,3 { }
+read_command,%land.rhs,6 { read_command,%if.end8,4 read_command,%while.body,6 }
+read_command,%land.rhs,9 { read_command,%if.then6,10 }
+read_command,%land.rhs,14 { }
+read_command,%while.body,2 { read_command,%if.end8,4 read_command,%while.body,6 }
+read_command,%while.end,2 { read_command,%if.end8,4 read_command,%while.body,6 }
+read_command,%if.then20,2 { read_command,%entry,7 }
+read_command,%if.then20,9 { }
+read_command,%if.end21,2 { read_command,%if.end8,4 read_command,%while.body,6 }
+read_command,%if.then25,2 { read_command,%if.end8,4 read_command,%while.body,6 }
+read_command,%if.then25,6 { }
+read_command,%while.cond26,2 { read_command,%if.then25,6 read_command,%while.body37,6 }
+read_command,%while.body37,6 { }
+read_command,%while.cond26,5 { read_command,%if.then6,10 }
+read_command,%land.rhs29,3 { }
+read_command,%land.rhs29,6 { read_command,%if.then25,6 read_command,%while.body37,6 }
+read_command,%land.rhs29,9 { read_command,%if.then6,10 }
+read_command,%land.rhs29,14 { }
+read_command,%while.body37,2 { read_command,%if.then25,6 read_command,%while.body37,6 }
+read_command,%while.end39,2 { read_command,%entry,7 }
+read_command,%while.end39,11 { read_command,%if.then25,6 read_command,%while.body37,6 }
+read_command,%while.end39,14 { read_command,%if.then6,10 }
+read_command,%if.then45,2 { read_command,%entry,7 }
+read_command,%if.then45,6 { }
+read_command,%if.then45,9 { read_command,%entry,7 }
+read_command,%if.then45,14 { }
+read_command,%if.else,2 { read_command,%entry,7 }
+read_command,%if.else,7 { read_command,%if.then25,6 read_command,%while.body37,6 }
+read_command,%if.else,11 { read_command,%entry,7 }
+read_command,%if.else,16 { }
+read_command,%if.else,19 { read_command,%entry,7 }
+read_command,%if.else,25 { read_command,%entry,7 }
+read_command,%if.else,29 { }
+read_command,%if.end56,2 { }
+read_command,%if.end57,2 { read_command,%entry,7 }
+read_command,%if.end57,7 { read_command,%if.end8,4 read_command,%while.body,6 }
+read_command,%if.end57,11 { read_command,%entry,7 }
+read_command,%if.end57,16 { }
+read_command,%if.end57,19 { read_command,%entry,7 }
+read_command,%if.end57,26 { read_command,%entry,7 }
+read_command,%if.end57,32 { read_command,%entry,7 }
+read_command,%if.end57,36 { }
+read_command,%if.end57,39 { }
+read_command,%return,2 { read_command,%if.then,2 read_command,%if.then20,9 read_command,%if.end56,2 read_command,%if.end57,39 }
+main_looper,%entry,9 { }
+main_looper,%entry,12 { main_looper,%entry,9 }
+main_looper,%entry,16 { }
+main_looper,%entry,20 { }
+main_looper,%entry,26 { }
+main_looper,%entry,30 { }
+main_looper,%while.body,3 { }
+main_looper,%if.then,3 { main_looper,%while.body,3 }
+main_looper,%if.then2,7 { }
+main_looper,%if.then2,10 { main_looper,%if.then2,7 }
+main_looper,%if.then2,14 { read_command,%if.then45,6 read_command,%if.else,29 read_command,%if.end57,36 }
+main_looper,%if.else,2 { main_looper,%while.body,3 }
+main_looper,%while.end,2 { main_looper,%entry,16 }
+main,%entry,3 { }
+looper,%while.end,2 { main_looper,%entry,16 }
+main,%entry,3 { }
